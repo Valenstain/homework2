@@ -18,15 +18,15 @@ void Swap(T* a, T* b)
     std::cout << a << " = " << *a << std::endl;
     std::cout << b << " = " << *b << std::endl;
 
-    T tmp{ std::move(*a) };
-    *a = std::move(*b);
+    T tmp{ *a };
+    *a = *b;
     std::cout << "Transfer 'a' to tmp and 'b' to 'a':" << std::endl;
 
     std::cout << "tmp" << " = " << tmp << std::endl;
     std::cout << a << " = " << *a << std::endl;
     std::cout << b << " = " << *b << std::endl;
 
-    *b = std::move(tmp);
+    *b = tmp;
 
     std::cout << "Transfer 'tmp' to 'b'" << std::endl;
 
